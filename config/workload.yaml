@@ -15,6 +15,6 @@ spec:
       autoscaling.knative.dev/minScale: "1"
   source:
     git:
-      url: github.com/odedia/weatherforecast-steeltoe
+      url: https://github.com/odedia/weatherforecast-steeltoe
       ref:
         branch: main

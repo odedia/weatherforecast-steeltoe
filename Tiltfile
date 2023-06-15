@@ -1,4 +1,5 @@
 allow_k8s_contexts('tap14')
+allow_k8s_contexts('tap-iterate')
 SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='your-registry.io/project/steeltoe-weatherforecast-source') # update registry
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 NAMESPACE = os.getenv("NAMESPACE", default='default')
@@ -18,7 +19,7 @@ k8s_custom_deploy(
   deps=['./bin'],
   container_selector='workload',
   live_update=[
-    sync('./bin', '/workspace')
+    sync('./bin/Debug/net6.0', '/workspace')
   ]
 )
 
